@@ -26,7 +26,7 @@ pipeline {
 				sh 'sleep 1' 
 				sh 'echo $! > .pidfile'
 				input message: 'Finished using the web site? (Click "Proceed" to continue)' 
-				sh 'kill $(cat .pidfile)'
+				sh 'kill -9 process_id'
 			}
 		}
 	}
