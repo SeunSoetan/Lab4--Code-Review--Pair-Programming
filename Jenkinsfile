@@ -24,9 +24,6 @@ pipeline {
 				sh 'npm run build'
 				sh 'npm start &'
 				sh 'sleep 1' 
-				sh 'echo $! > .pidfile'
-				input message: 'Finished using the web site? (Click "Proceed" to continue)' 
-				sh 'kill -9 process_id'
 			}
 		}
 	}
